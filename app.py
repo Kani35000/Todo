@@ -19,6 +19,14 @@ def index_page():
     todos= Todo.query.all()
     return render_template('todo2.html', todos=todos)
 
+@app.route('/api/todos', methods=["POST"])
+def create_todo():
+    new_todo= Todo(title=request.json['title'])
+    db.session.add(new_todo)
+    db.session.commit()
+    response_json= jsonify(todo=new_todo.serialized())
+    return (response_json, 201) 
+
 
 @app.route('/api/todos')
 def list_todos():
