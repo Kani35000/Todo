@@ -23,11 +23,14 @@ class Todo(db.Model):
     def serialized(self):
         return {
             'id': self.id,
-            'title': self.title,
-            'done': self.done
+            'content': self.content,
+            'category': self.category,
+            'done': self.done,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at
         }
 
     def __repr__(self):
-        return f"<Todo id={self.id} title={self.title} done=title={self.done} category={self.category}>"
+        return f"<Todo id={self.id} content={self.content} category={self.category} done={self.done} created_at={self.created_at} updated_at={self.updated_at}>"
    
    
