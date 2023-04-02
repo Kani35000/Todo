@@ -19,20 +19,13 @@
     </section>
 <section class="create-todo">
     <h3>CREATE A TODO</h3>
-    <form  id="new-todo-form" method="post">
+    <form action="/" id="new-todo-form" method="post">
         <h4>What is on your todo list?</h4>
-        <input 
-        type="text" 
-        name="content" 
-        id="content" 
-        placeholder="e.g. make a video"/>
+        <input type="text" name="content" id="content" placeholder="e.g. make a video"/>
     <h4>Pick a category</h4>
     <div class="option">
         <label>
-            <input type="radio" 
-            name="category" 
-            id="category1" 
-            value="Business"/>
+            <input type="radio" name="category" id="category1" value="Business"/>
             <span class="bubble business"></span>
             <div>Business</div>
         </label>
@@ -60,14 +53,15 @@
             <div class="todo-item done "> 
                 
                <label >
-                   <input type="checkbox"/>
+                   <input type="checkbox" name="done"/>
                    <span class="bubble business"></span>
                </label>
                <div class="todo-content">
-                   <input type="text" value="{{todo.title}}" readonly/>
+                   <input type="text" value="{{todo.content}}:{{new_todo.created_at}}" readonly/>
                </div>
                <div class="actions">
                    <button class="edit">Edit</button>
+                   <!-- if update -->
                    <button class="delete">Delete</button>
                </div>
                </div>
@@ -82,6 +76,6 @@
     
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="/static/todo2.js"></script>
+    <!-- <script src="/static/todo2.js"></script> -->
 </body>
 </html>
