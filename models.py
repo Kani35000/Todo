@@ -15,7 +15,7 @@ class Todo(db.Model):
     id=db.Column(db.Integer, primary_key= True,autoincrement= True)
     title= db.Column(db.Text, nullable= False)
     done=db.Column(db.Boolean, default= False)
-    created_at = Column(db.DateTime, nullable= False, default= datetime.utcnow)
+    created_at = db.Column(db.DateTime, nullable= False, default= datetime.utcnow)
 
     def serialized(self):
         return {
