@@ -15,8 +15,7 @@ debug = DebugToolbarExtension(app)
 connect_db(app)
 
 @app.route('/')
-def homepage():
-    
+def homepage():   
     todos= Todo.query.all()
     return render_template('todo2.html', todos=todos)
 
